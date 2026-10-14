@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Группы</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <h1><a href="index.html">Система ведомостей</a></h1>
+
+      <div class="menu">
+        <a href="index.html">Главная</a>
+        <a href="groups.html">Группы</a>
+        <a href="vedomost.html">Ведомости</a>
+      </div>
+    </nav>
+
+    <main class="container">
+      <div id="breadcrumbs" class="breadcrumbs"></div>
+
+      <div class="page-header">
+        <div>
+          <h2>Учебные группы</h2>
+          <p id="groupsCount"></p>
+        </div>
+        <button id="addGroupBtn" class="btn">+ Добавить группу</button>
+      </div>
+
+      <div class="toolbar">
+        <input type="search" id="groupSearch" class="search" placeholder="Поиск группы по названию" autocomplete="off" />
+      </div>
+
+      <div id="groups" class="grid"></div>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/groups.js"></script>
+  </body>
+</html>

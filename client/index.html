@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Система ведомостей</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <h1><a href="index.html">Система ведомостей</a></h1>
+
+      <div class="menu">
+        <a href="index.html">Главная</a>
+        <a href="groups.html">Группы</a>
+        <a href="vedomost.html">Ведомости</a>
+      </div>
+    </nav>
+
+    <main class="container">
+      <section class="card hero">
+        <h2>Автоматизированная система учёта экзаменационных ведомостей</h2>
+        <p>
+          Хранение данных о факультетах, специальностях, учебных группах, студентах и дисциплинах.
+          Ведение экзаменационных ведомостей, выставление оценок, история успеваемости студентов за все
+          годы обучения и печать ведомостей в PDF.
+        </p>
+        <a href="groups.html" class="btn">Перейти к группам →</a>
+      </section>
+
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="label">Учебных групп</div>
+          <div class="value" id="statGroups">—</div>
+        </div>
+        <div class="stat">
+          <div class="label">Студентов</div>
+          <div class="value" id="statStudents">—</div>
+        </div>
+        <div class="stat">
+          <div class="label">Ведомостей</div>
+          <div class="value" id="statVedomosti">—</div>
+        </div>
+        <div class="stat">
+          <div class="label">Средний балл по колледжу</div>
+          <div class="value" id="statAverage">—</div>
+          <div class="hint">без учёта неявок</div>
+        </div>
+      </div>
+
+      <div class="two-cols">
+        <section class="card">
+          <h3>Поиск студента</h3>
+          <input type="search" id="studentSearch" class="search" placeholder="Фамилия, имя или отчество" autocomplete="off" />
+          <div id="searchResults" class="search-results"></div>
+        </section>
+
+        <section class="card">
+          <h3>Последние ведомости</h3>
+          <div id="recent"></div>
+          <div class="card-actions">
+            <a href="vedomost.html" class="btn btn-light btn-sm">Все ведомости</a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

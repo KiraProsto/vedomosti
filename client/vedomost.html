@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ведомость</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <h1><a href="index.html">Система ведомостей</a></h1>
+
+      <div class="menu">
+        <a href="index.html">Главная</a>
+        <a href="groups.html">Группы</a>
+        <a href="vedomost.html">Ведомости</a>
+      </div>
+    </nav>
+
+    <main class="container">
+      <div id="breadcrumbs" class="breadcrumbs"></div>
+
+      <!-- Режим списка/создания (без ?id=) -->
+      <div id="listView" hidden>
+        <div class="page-header">
+          <h2>Экзаменационные ведомости</h2>
+        </div>
+
+        <form id="createForm" class="form-card">
+          <h3>Создать или открыть ведомость</h3>
+          <div class="form-row">
+            <div>
+              <label for="cGroup">Группа</label>
+              <select id="cGroup" required></select>
+            </div>
+            <div>
+              <label for="cSubject">Предмет</label>
+              <select id="cSubject" required></select>
+            </div>
+            <div>
+              <label for="cYear">Учебный год</label>
+              <select id="cYear" required></select>
+            </div>
+            <div>
+              <label for="cSession">Сессия</label>
+              <select id="cSession" required></select>
+            </div>
+          </div>
+          <button type="submit" class="btn">Открыть ведомость</button>
+          <p class="form-error" id="createError" hidden></p>
+        </form>
+
+        <div class="toolbar">
+          <select id="filterGroup" aria-label="Фильтр по группе"></select>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Учебный год</th>
+                <th>Сессия</th>
+                <th>Группа</th>
+                <th>Предмет</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="vedomostiList"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Режим просмотра ведомости (?id=) -->
+      <div id="vedomostView" hidden>
+        <section class="card">
+          <h2 id="vTitle">Ведомость</h2>
+          <div class="info-list" id="vInfo"></div>
+        </section>
+
+        <div class="vedomost-layout">
+          <div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th class="num">№</th>
+                    <th>ФИО студента</th>
+                    <th>Оценка</th>
+                  </tr>
+                </thead>
+                <tbody id="vedomost"></tbody>
+              </table>
+            </div>
+
+            <div class="actions-bar">
+              <button id="saveBtn" class="btn" disabled>Сохранить оценки</button>
+              <button id="printBtn" class="btn btn-light">Скачать PDF</button>
+              <button id="deleteBtn" class="btn btn-danger">Удалить ведомость</button>
+              <span id="unsaved" class="unsaved" hidden>Есть несохранённые изменения</span>
+            </div>
+          </div>
+
+          <aside class="stats" id="stats"></aside>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/vedomost.js"></script>
+  </body>
+</html>
