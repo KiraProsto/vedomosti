@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Студенты</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <h1><a href="index.html">Система ведомостей</a></h1>
+
+      <div class="menu">
+        <a href="index.html">Главная</a>
+        <a href="groups.html">Группы</a>
+        <a href="vedomost.html">Ведомости</a>
+      </div>
+    </nav>
+
+    <main class="container">
+      <div id="breadcrumbs" class="breadcrumbs"></div>
+
+      <div class="page-header">
+        <div>
+          <h2 id="groupTitle">Студенты группы</h2>
+          <p id="groupInfo"></p>
+        </div>
+        <button id="addStudentBtn" class="btn">+ Добавить студента</button>
+      </div>
+
+      <div class="toolbar">
+        <input type="search" id="studentSearch" class="search" placeholder="Поиск по ФИО" autocomplete="off" />
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="num">№</th>
+              <th>ФИО студента</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="students"></tbody>
+        </table>
+      </div>
+
+      <div class="page-header section-title">
+        <h2>Ведомости группы</h2>
+        <a id="newVedomostLink" href="vedomost.html" class="btn">+ Новая ведомость</a>
+      </div>
+
+      <div id="vedomosti"></div>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/students.js"></script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Карточка студента</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <h1><a href="index.html">Система ведомостей</a></h1>
+
+      <div class="menu">
+        <a href="index.html">Главная</a>
+        <a href="groups.html">Группы</a>
+        <a href="vedomost.html">Ведомости</a>
+      </div>
+    </nav>
+
+    <main class="container">
+      <div id="breadcrumbs" class="breadcrumbs"></div>
+
+      <section class="card student-card" id="studentInfo"></section>
+
+      <h2 class="section-title">История успеваемости</h2>
+
+      <div id="history"></div>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/student.js"></script>
+  </body>
+</html>
